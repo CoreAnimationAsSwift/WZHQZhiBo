@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="ZhiBo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-pY-Igd">
+                        <rect key="frame" x="18" y="71" width="44" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="UY6-Ld-XLa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-cE-oSs">
+                        <rect key="frame" x="17" y="15" width="46" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="bvC-cE-oSs" secondAttribute="height" multiplier="1:1" id="Jy2-f5-U8U"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="23"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bvC-cE-oSs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fjv-a8-kyj"/>
+                <constraint firstItem="bYV-pY-Igd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WMq-fy-bod"/>
+                <constraint firstItem="bvC-cE-oSs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="boB-MK-FBo"/>
+                <constraint firstAttribute="bottom" secondItem="bYV-pY-Igd" secondAttribute="bottom" constant="5" id="jvF-1v-at6"/>
+                <constraint firstItem="bYV-pY-Igd" firstAttribute="top" secondItem="bvC-cE-oSs" secondAttribute="bottom" constant="10" id="sPW-xa-sYE"/>
+            </constraints>
+            <size key="customSize" width="80" height="91"/>
+            <connections>
+                <outlet property="imageView" destination="bvC-cE-oSs" id="HHY-ix-cEk"/>
+                <outlet property="titleLabel" destination="bYV-pY-Igd" id="yW4-Ll-bN1"/>
+            </connections>
+            <point key="canvasLocation" x="410" y="316"/>
+        </collectionViewCell>
+    </objects>
+</document>

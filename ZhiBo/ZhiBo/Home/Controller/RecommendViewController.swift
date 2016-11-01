@@ -15,7 +15,8 @@ private let kNormalCellID = "kNomarlCellID"
 private let kYanZhiCellID = "kYanZhiCellID"
 private let kHeaderViewID = "kHeaderViewID"
 private let kHeaderViewH :CGFloat = 50
-private let kCycleH = kScreenW * 3 / 8
+private let kCycleH :CGFloat = kScreenW * 3 / 8
+private let kGrameH :CGFloat = 90
 
 class RecommendViewController: UIViewController {
 
@@ -46,9 +47,14 @@ class RecommendViewController: UIViewController {
     }()
     private lazy var cycleView : RecommendCyleView = {
        let cycleView = RecommendCyleView.recommendCyleView()
-        cycleView.frame = CGRect(x: 0, y:-kCycleH , width: kScreenW, height: kCycleH)
+        cycleView.frame = CGRect(x: 0, y:-(kCycleH + kGrameH) , width: kScreenW, height: kCycleH)
         
         return cycleView
+    }()
+    private lazy var grameView :RecommendGameView = {
+       let grameView = RecommendGameView.recommendGremView()
+        grameView.frame = CGRect (x: 0, y: -kGrameH, width: kScreenW, height: kGrameH)
+        return grameView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,10 @@ class RecommendViewController: UIViewController {
         //加载数据
         viewModel.loadData { () -> () in
             self.collectionView.reloadData()
+            self.grameView.groups = self.viewModel.anchorGroup
+        }
+        viewModel.loadCycleData { () -> () in
+            self.cycleView.cycleModels = self.viewModel.cycleModels
         }
 
     }
@@ -66,7 +76,8 @@ extension RecommendViewController {
     private func setupUI() {
         view.addSubview(self.collectionView)
         collectionView.addSubview(cycleView)
-        
+        collectionView.addSubview(grameView)
+        collectionView.contentInset = UIEdgeInsets(top: kCycleH + kGrameH, left: 0, bottom: 0, right: 0)
     }
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -10,9 +10,41 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCyleView" customModule="ZhiBo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6TG-SS-UpY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="IVn-Sm-Ext">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="Kqe-vb-bEX"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="xoL-18-d45"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="baI-IP-bwW">
+                    <rect key="frame" x="326" y="113" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
             <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="baI-IP-bwW" secondAttribute="bottom" id="0uG-NO-GpO"/>
+                <constraint firstAttribute="trailing" secondItem="baI-IP-bwW" secondAttribute="trailing" constant="10" id="SjU-sE-Riv"/>
+                <constraint firstItem="6TG-SS-UpY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ohY-Lk-Fep"/>
+                <constraint firstAttribute="trailing" secondItem="6TG-SS-UpY" secondAttribute="trailing" id="qmc-ma-FIk"/>
+                <constraint firstItem="6TG-SS-UpY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="udk-Oy-7LB"/>
+                <constraint firstAttribute="bottom" secondItem="6TG-SS-UpY" secondAttribute="bottom" id="y4o-bh-Xk5"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="148" y="455.5"/>
+            <connections>
+                <outlet property="collectionView" destination="6TG-SS-UpY" id="wt1-Iv-v3T"/>
+                <outlet property="pageControl" destination="baI-IP-bwW" id="Rb7-CM-OoS"/>
+            </connections>
+            <point key="canvasLocation" x="-64.5" y="472"/>
         </view>
     </objects>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewModel {
-    
+    lazy var cycleModels :[CycleModel] = [CycleModel]()
     lazy var anchorGroup :[AnchorGroup] = [AnchorGroup]()
     private lazy var oneGroup :AnchorGroup = AnchorGroup()
     private lazy var twoGroup : AnchorGroup = AnchorGroup()
@@ -61,6 +61,17 @@ class ViewModel {
             completion()
         }
     }
-    
+    func loadCycleData(completion:() -> ()) {
+        NetworkTools.requestData(.GET, urlString: "http://capi.douyutv.com/api/v1/slide/6", parameters: ["version":"2.300"]) { (result) -> () in
+//            print(result)
+            guard let resultDict = result as? [String : AnyObject] else {return}
+            guard let resultArr = resultDict["data"] as? [[String:AnyObject]] else {return}
+            
+            for dict in resultArr {
+                self.cycleModels.append(CycleModel(dict: dict))
+            }
+            completion()
+        }
+    }
     
 }

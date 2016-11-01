@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionCycleCell" customModule="ZhiBo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="243" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="243" height="148"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="xKj-kC-287">
+                        <rect key="frame" x="0.0" y="0.0" width="243" height="148"/>
+                    </imageView>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzh-Ab-kLL">
+                        <rect key="frame" x="0.0" y="118" width="243" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无限循环轮播器" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkN-U7-id0">
+                                <rect key="frame" x="10" y="7" width="223" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QkN-U7-id0" firstAttribute="centerY" secondItem="Wzh-Ab-kLL" secondAttribute="centerY" id="2nJ-ui-5JC"/>
+                            <constraint firstAttribute="height" constant="30" id="7O9-iX-3Du"/>
+                            <constraint firstItem="QkN-U7-id0" firstAttribute="leading" secondItem="Wzh-Ab-kLL" secondAttribute="leading" constant="10" id="l3Z-hn-nRZ"/>
+                            <constraint firstAttribute="trailing" secondItem="QkN-U7-id0" secondAttribute="trailing" constant="10" id="nKm-8n-v3Z"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wzh-Ab-kLL" secondAttribute="trailing" id="PL1-Tm-pvx"/>
+                <constraint firstAttribute="bottom" secondItem="Wzh-Ab-kLL" secondAttribute="bottom" id="VDS-bf-LF9"/>
+                <constraint firstItem="xKj-kC-287" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bej-BK-Sha"/>
+                <constraint firstAttribute="trailing" secondItem="xKj-kC-287" secondAttribute="trailing" id="bpa-gj-7rl"/>
+                <constraint firstItem="Wzh-Ab-kLL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="faB-1b-VL7"/>
+                <constraint firstItem="xKj-kC-287" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uaV-c0-VJf"/>
+                <constraint firstAttribute="bottom" secondItem="xKj-kC-287" secondAttribute="bottom" id="xW9-1o-fv5"/>
+            </constraints>
+            <size key="customSize" width="243" height="148"/>
+            <connections>
+                <outlet property="cycleLabel" destination="QkN-U7-id0" id="DRB-01-4D7"/>
+                <outlet property="iconImageView" destination="xKj-kC-287" id="UuH-qx-265"/>
+            </connections>
+            <point key="canvasLocation" x="306.5" y="314"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Img_default" width="172" height="103"/>
+    </resources>
+</document>
