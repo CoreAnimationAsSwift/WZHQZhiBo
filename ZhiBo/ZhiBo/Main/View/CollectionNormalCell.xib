@@ -71,6 +71,12 @@
                     <exclude reference="W4e-Fu-Haq"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="iconImageView" destination="Z4w-jg-bsh" id="zlz-Sk-h7b"/>
+                <outlet property="nickNameLabel" destination="fRs-mY-6bR" id="FWu-7g-IJz"/>
+                <outlet property="onLineBtn" destination="Bq6-HO-wNH" id="29v-8e-xBl"/>
+                <outlet property="roomNameLabel" destination="rbh-wO-y9e" id="yjx-84-O8Q"/>
+            </connections>
             <point key="canvasLocation" x="273" y="274.5"/>
         </collectionViewCell>
     </objects>

@@ -83,9 +83,12 @@ extension PageTitleView {
     }
     
     @objc private func lableTapGesClick(tapGes:UITapGestureRecognizer) {
+        
         //1获取当前label的
         guard let currentLabel =  tapGes.view as? UILabel else {return}
         //2获取老的label
+        if currentLabel.tag == index  {return}
+        
         let oldLabel = titleLables[index]
         //3
         currentLabel.textColor = UIColor.orangeColor()

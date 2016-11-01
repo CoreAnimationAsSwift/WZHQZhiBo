@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042F33CE1DC7761400548FA8 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042F33CD1DC7761400548FA8 /* AnchorModel.swift */; };
+		043C994E1DC844430018D830 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C994D1DC844430018D830 /* CollectionBaseCell.swift */; };
+		043C99501DC84E7A0018D830 /* RecommendCyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C994F1DC84E7A0018D830 /* RecommendCyleView.swift */; };
+		043C99521DC84E850018D830 /* RecommendCyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043C99511DC84E850018D830 /* RecommendCyleView.xib */; };
 		046A75A21DC6DDCF005A486F /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A75A01DC6DDCF005A486F /* CollectionHeaderView.swift */; };
 		046A75A31DC6DDCF005A486F /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A75A11DC6DDCF005A486F /* CollectionHeaderView.xib */; };
 		046A75A61DC6E24F005A486F /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A75A41DC6E24F005A486F /* CollectionNormalCell.swift */; };
 		046A75A71DC6E24F005A486F /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A75A51DC6E24F005A486F /* CollectionNormalCell.xib */; };
 		046A75AA1DC6E90F005A486F /* CollectionVYanZhiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A75A81DC6E90F005A486F /* CollectionVYanZhiCell.swift */; };
 		046A75AB1DC6E90F005A486F /* CollectionVYanZhiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A75A91DC6E90F005A486F /* CollectionVYanZhiCell.xib */; };
+		046A760B1DC74181005A486F /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A760A1DC74181005A486F /* NetworkTools.swift */; };
+		046A760E1DC7489F005A486F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A760D1DC7489F005A486F /* ViewModel.swift */; };
+		046A76111DC74E57005A486F /* NSDate+Extemsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A76101DC74E57005A486F /* NSDate+Extemsion.swift */; };
+		046A76131DC7537E005A486F /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A76121DC7537E005A486F /* AnchorGroup.swift */; };
 		049BE7E41DC487AE00AFC180 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BE7E31DC487AE00AFC180 /* Follow.storyboard */; };
 		049BE7E61DC487D600AFC180 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BE7E51DC487D600AFC180 /* Live.storyboard */; };
 		049BE7E81DC487F400AFC180 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BE7E71DC487F400AFC180 /* Profile.storyboard */; };
@@ -34,12 +42,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042F33CD1DC7761400548FA8 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		043C994D1DC844430018D830 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		043C994F1DC84E7A0018D830 /* RecommendCyleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCyleView.swift; sourceTree = "<group>"; };
+		043C99511DC84E850018D830 /* RecommendCyleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCyleView.xib; sourceTree = "<group>"; };
 		046A75A01DC6DDCF005A486F /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		046A75A11DC6DDCF005A486F /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		046A75A41DC6E24F005A486F /* CollectionNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
 		046A75A51DC6E24F005A486F /* CollectionNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
 		046A75A81DC6E90F005A486F /* CollectionVYanZhiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVYanZhiCell.swift; sourceTree = "<group>"; };
 		046A75A91DC6E90F005A486F /* CollectionVYanZhiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionVYanZhiCell.xib; sourceTree = "<group>"; };
+		046A760A1DC74181005A486F /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		046A760D1DC7489F005A486F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = ZhiBo/Home/ViewModel.swift; sourceTree = SOURCE_ROOT; };
+		046A76101DC74E57005A486F /* NSDate+Extemsion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extemsion.swift"; sourceTree = "<group>"; };
+		046A76121DC7537E005A486F /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		049BE7E31DC487AE00AFC180 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Follow.storyboard; path = ZhiBo/Follow/Follow.storyboard; sourceTree = SOURCE_ROOT; };
 		049BE7E51DC487D600AFC180 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		049BE7E71DC487F400AFC180 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -76,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046A760F1DC74943005A486F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				046A760D1DC7489F005A486F /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		049BE7D91DC4831300AFC180 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +114,7 @@
 				049BE7F21DC48F7400AFC180 /* Controller */,
 				049BE7F41DC48F7400AFC180 /* Model */,
 				049BE7F51DC48F7400AFC180 /* View */,
+				046A760F1DC74943005A486F /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -115,6 +140,7 @@
 			children = (
 				049BE7FD1DC49F8800AFC180 /* extension */,
 				049BE8051DC4CBB600AFC180 /* Common.swift */,
+				046A760A1DC74181005A486F /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -141,6 +167,8 @@
 		049BE7ED1DC48EEB00AFC180 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				046A76121DC7537E005A486F /* AnchorGroup.swift */,
+				042F33CD1DC7761400548FA8 /* AnchorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +182,7 @@
 				046A75A51DC6E24F005A486F /* CollectionNormalCell.xib */,
 				046A75A81DC6E90F005A486F /* CollectionVYanZhiCell.swift */,
 				046A75A91DC6E90F005A486F /* CollectionVYanZhiCell.xib */,
+				043C994D1DC844430018D830 /* CollectionBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +209,8 @@
 			children = (
 				046A75A01DC6DDCF005A486F /* CollectionHeaderView.swift */,
 				046A75A11DC6DDCF005A486F /* CollectionHeaderView.xib */,
+				043C994F1DC84E7A0018D830 /* RecommendCyleView.swift */,
+				043C99511DC84E850018D830 /* RecommendCyleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +220,7 @@
 			children = (
 				049BE7FE1DC49FFB00AFC180 /* UIBarBtuItem+extension.swift */,
 				049BE80B1DC57B3C00AFC180 /* UIColor+Extension.swift */,
+				046A76101DC74E57005A486F /* NSDate+Extemsion.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -311,6 +343,7 @@
 				049BE7E41DC487AE00AFC180 /* Follow.storyboard in Resources */,
 				046A75A31DC6DDCF005A486F /* CollectionHeaderView.xib in Resources */,
 				046A75A71DC6E24F005A486F /* CollectionNormalCell.xib in Resources */,
+				043C99521DC84E850018D830 /* RecommendCyleView.xib in Resources */,
 				04ACBF5C1DC47E130066E4FD /* LaunchScreen.storyboard in Resources */,
 				049BE7E61DC487D600AFC180 /* Live.storyboard in Resources */,
 				046A75AB1DC6E90F005A486F /* CollectionVYanZhiCell.xib in Resources */,
@@ -376,18 +409,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043C99501DC84E7A0018D830 /* RecommendCyleView.swift in Sources */,
+				046A760B1DC74181005A486F /* NetworkTools.swift in Sources */,
 				049BE8041DC4C91F00AFC180 /* PageTitleView.swift in Sources */,
 				046A75A21DC6DDCF005A486F /* CollectionHeaderView.swift in Sources */,
 				049BE7FF1DC49FFB00AFC180 /* UIBarBtuItem+extension.swift in Sources */,
 				049BE7FA1DC48FDD00AFC180 /* MainViewController.swift in Sources */,
 				049BE80C1DC57B3C00AFC180 /* UIColor+Extension.swift in Sources */,
 				049BE80A1DC577FD00AFC180 /* PageContentView.swift in Sources */,
+				046A76111DC74E57005A486F /* NSDate+Extemsion.swift in Sources */,
 				04ACBF541DC47E130066E4FD /* ViewController.swift in Sources */,
+				046A76131DC7537E005A486F /* AnchorGroup.swift in Sources */,
 				04ACBF521DC47E130066E4FD /* AppDelegate.swift in Sources */,
 				046A75AA1DC6E90F005A486F /* CollectionVYanZhiCell.swift in Sources */,
+				043C994E1DC844430018D830 /* CollectionBaseCell.swift in Sources */,
+				046A760E1DC7489F005A486F /* ViewModel.swift in Sources */,
 				049BE7FC1DC49AA300AFC180 /* HomeViewController.swift in Sources */,
 				049BE8061DC4CBB600AFC180 /* Common.swift in Sources */,
 				046A75A61DC6E24F005A486F /* CollectionNormalCell.swift in Sources */,
+				042F33CE1DC7761400548FA8 /* AnchorModel.swift in Sources */,
 				049BE8121DC6C5CE00AFC180 /* RecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
