@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,16 +16,17 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-pY-Igd">
                         <rect key="frame" x="18" y="71" width="44" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="14" id="UY6-Ld-XLa"/>
+                            <constraint firstAttribute="height" constant="14" id="Lf4-EP-baG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-cE-oSs">
-                        <rect key="frame" x="17" y="15" width="46" height="46"/>
+                        <rect key="frame" x="17" y="14" width="46" height="46"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="bvC-cE-oSs" secondAttribute="height" multiplier="1:1" id="Jy2-f5-U8U"/>
+                            <constraint firstAttribute="width" constant="46" id="A7J-GY-WU4"/>
+                            <constraint firstAttribute="height" constant="46" id="X7d-bV-igg"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -35,16 +35,25 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgT-mX-NWi">
+                        <rect key="frame" x="0.0" y="88" width="80" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="fwK-lv-pwL"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="bvC-cE-oSs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Fjv-a8-kyj"/>
-                <constraint firstItem="bYV-pY-Igd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WMq-fy-bod"/>
-                <constraint firstItem="bvC-cE-oSs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="boB-MK-FBo"/>
-                <constraint firstAttribute="bottom" secondItem="bYV-pY-Igd" secondAttribute="bottom" constant="5" id="jvF-1v-at6"/>
-                <constraint firstItem="bYV-pY-Igd" firstAttribute="top" secondItem="bvC-cE-oSs" secondAttribute="bottom" constant="10" id="sPW-xa-sYE"/>
+                <constraint firstAttribute="trailing" secondItem="hgT-mX-NWi" secondAttribute="trailing" id="2oR-6W-OVr"/>
+                <constraint firstItem="bYV-pY-Igd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Acc-sM-vH9"/>
+                <constraint firstItem="bvC-cE-oSs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="GWG-IU-hE8"/>
+                <constraint firstAttribute="bottom" secondItem="hgT-mX-NWi" secondAttribute="bottom" constant="1" id="MHK-TJ-gR2"/>
+                <constraint firstItem="bYV-pY-Igd" firstAttribute="top" secondItem="bvC-cE-oSs" secondAttribute="bottom" constant="11" id="flA-Eh-LMe"/>
+                <constraint firstItem="bvC-cE-oSs" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-8" id="t20-8z-pf5"/>
+                <constraint firstItem="hgT-mX-NWi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="woX-Q8-3lG"/>
             </constraints>
             <size key="customSize" width="80" height="91"/>
             <connections>
