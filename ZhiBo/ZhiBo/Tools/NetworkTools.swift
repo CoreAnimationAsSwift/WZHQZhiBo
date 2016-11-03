@@ -13,24 +13,16 @@ enum MethodType :String {
     case POST = "POST"
 }
 class NetworkTools {
-    class func requestData(type:MethodType,urlString:String,parameters:[String:AnyObject]? = nil,completion:(result:AnyObject?)->()) {
+    class func requestData(_ type:MethodType,urlString:String,parameters:[String:Any]? = nil,completion:@escaping (_ result:Any?)->()) {
         
-        if type == MethodType.GET {
-          Alamofire.request(.GET, urlString).responseJSON(completionHandler: { (response) -> Void in
+        let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
+        Alamofire.request(urlString, method: method, parameters: parameters).responseJSON { (response) in
             guard let result = response.result.value else {
-                print(response.result.error)
+                print(response.result.error!)
                 return
             }
-            completion(result: result)
-          })
-        }else {
-        Alamofire.request(.POST, urlString,parameters: parameters).responseJSON(completionHandler: { (response) -> Void in
-            guard let result = response.result.value else {
-                print(response.result.error)
-                return
-            }
-            completion(result: result)
-        })
+            completion(result)
         }
-    }
+        
+        }
 }

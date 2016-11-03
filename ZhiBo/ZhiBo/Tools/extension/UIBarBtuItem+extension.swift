@@ -9,14 +9,14 @@
 import UIKit
 
 extension UIBarButtonItem {
-    convenience init(imageName:String,highlightName:String = "",size:CGSize = CGSizeZero) {
+    convenience init(imageName:String,highlightName:String = "",size:CGSize = CGSize.zero) {
         let btn = UIButton()
-        btn.setImage(UIImage(named: imageName), forState: .Normal)
+        btn.setImage(UIImage(named: imageName), for: UIControlState())
         if highlightName != "" {
-        btn.setImage(UIImage(named: highlightName), forState: .Highlighted)
+        btn.setImage(UIImage(named: highlightName), for: .highlighted)
         }
-        if size != CGSizeZero {
-        btn.frame = CGRect(origin: CGPointZero, size: size)
+        if size != CGSize.zero {
+        btn.frame = CGRect(origin: CGPoint.zero, size: size)
         }else {
             btn.sizeToFit()
         }

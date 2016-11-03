@@ -31,6 +31,8 @@
 		046A760E1DC7489F005A486F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A760D1DC7489F005A486F /* ViewModel.swift */; };
 		046A76111DC74E57005A486F /* NSDate+Extemsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A76101DC74E57005A486F /* NSDate+Extemsion.swift */; };
 		046A76131DC7537E005A486F /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A76121DC7537E005A486F /* AnchorGroup.swift */; };
+		048AF2781DCAF85C00322CBC /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AF2771DCAF85C00322CBC /* AmuseViewController.swift */; };
+		048AF27A1DCB045500322CBC /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AF2791DCB045500322CBC /* AmuseViewModel.swift */; };
 		049BE7E41DC487AE00AFC180 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BE7E31DC487AE00AFC180 /* Follow.storyboard */; };
 		049BE7E61DC487D600AFC180 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BE7E51DC487D600AFC180 /* Live.storyboard */; };
 		049BE7E81DC487F400AFC180 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BE7E71DC487F400AFC180 /* Profile.storyboard */; };
@@ -77,6 +79,8 @@
 		046A760D1DC7489F005A486F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = ZhiBo/Home/ViewModel.swift; sourceTree = SOURCE_ROOT; };
 		046A76101DC74E57005A486F /* NSDate+Extemsion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extemsion.swift"; sourceTree = "<group>"; };
 		046A76121DC7537E005A486F /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
+		048AF2771DCAF85C00322CBC /* AmuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
+		048AF2791DCB045500322CBC /* AmuseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
 		049BE7E31DC487AE00AFC180 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Follow.storyboard; path = ZhiBo/Follow/Follow.storyboard; sourceTree = SOURCE_ROOT; };
 		049BE7E51DC487D600AFC180 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		049BE7E71DC487F400AFC180 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			children = (
 				046A760D1DC7489F005A486F /* ViewModel.swift */,
 				04635BCF1DC99944004AB1D0 /* GameViewModel.swift */,
+				048AF2791DCB045500322CBC /* AmuseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				049BE7FB1DC49AA300AFC180 /* HomeViewController.swift */,
 				049BE8111DC6C5CE00AFC180 /* RecommendViewController.swift */,
 				04AE31511DC986D7006F4738 /* GameViewController.swift */,
+				048AF2771DCAF85C00322CBC /* AmuseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,12 +347,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
 					04ACBF4D1DC47E130066E4FD = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = L3CSAV25M3;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -457,9 +464,11 @@
 				043C99541DC873840018D830 /* CycleModel.swift in Sources */,
 				049BE80C1DC57B3C00AFC180 /* UIColor+Extension.swift in Sources */,
 				049BE80A1DC577FD00AFC180 /* PageContentView.swift in Sources */,
+				048AF2781DCAF85C00322CBC /* AmuseViewController.swift in Sources */,
 				04635BD01DC99944004AB1D0 /* GameViewModel.swift in Sources */,
 				046A76111DC74E57005A486F /* NSDate+Extemsion.swift in Sources */,
 				04ACBF541DC47E130066E4FD /* ViewController.swift in Sources */,
+				048AF27A1DCB045500322CBC /* AmuseViewModel.swift in Sources */,
 				046A76131DC7537E005A486F /* AnchorGroup.swift in Sources */,
 				04ACBF521DC47E130066E4FD /* AppDelegate.swift in Sources */,
 				046A75AA1DC6E90F005A486F /* CollectionVYanZhiCell.swift in Sources */,
@@ -503,8 +512,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -547,8 +558,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -567,6 +580,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -575,12 +589,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 259EA87166F4B8877DE210CE /* Pods-ZhiBo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				DEVELOPMENT_TEAM = L3CSAV25M3;
 				INFOPLIST_FILE = ZhiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wxhl.com.ZhiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -588,12 +605,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FDA1ECDF507FE14E58FE95E /* Pods-ZhiBo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				DEVELOPMENT_TEAM = L3CSAV25M3;
 				INFOPLIST_FILE = ZhiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wxhl.com.ZhiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

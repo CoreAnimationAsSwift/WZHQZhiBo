@@ -17,8 +17,16 @@ class CollectionCycleCell: UICollectionViewCell {
         didSet {
 //            guard let cycleModel = cycleModel else {return}
             cycleLabel.text = cycleModel?.title
-            let url = NSURL(string: cycleModel?.pic_url ?? "")
-            iconImageView.kf_setImageWithURL(url!, placeholderImage: UIImage(named: "Img_default"))
+//            guard let url = URL(string: (cycleModel?.pic_url)!) else {
+//                iconImageView.image = UIImage(named: "Img_default")
+//                return
+//            }
+            
+            if let url = URL(string: (cycleModel?.pic_url)!) {
+            iconImageView.kf.setImage(with: url, placeholder: UIImage(named: "Img_default"))
+            }else {
+                 iconImageView.image = UIImage(named: "Img_default")
+            }
         }
     }
     

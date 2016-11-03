@@ -14,19 +14,19 @@ private let kSelectColor:(CGFloat,CGFloat,CGFloat) = (255,128,0)
 
 protocol PageTitleViewDelegate : class {
     
-    func PageTitle(titelView : PageTitleView, selectedIndex index : Int)
+    func PageTitle(_ titelView : PageTitleView, selectedIndex index : Int)
 }
 
 class PageTitleView: UIView {
     
     weak var delegate :PageTitleViewDelegate?
     
-    private var index :Int = 0
+    fileprivate var index :Int = 0
     //标题数组
-    private var titles:[String]
+    fileprivate var titles:[String]
     //
-    private lazy var titleLables:[UILabel] = [UILabel]()
-    private lazy var scrollView:UIScrollView = {
+    fileprivate lazy var titleLables:[UILabel] = [UILabel]()
+    fileprivate lazy var scrollView:UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.scrollsToTop = false
@@ -34,9 +34,9 @@ class PageTitleView: UIView {
         return scrollView
         
     }()
-    private lazy var scrollLine:UIView = {
+    fileprivate lazy var scrollLine:UIView = {
        let scrollLine = UIView()
-        scrollLine.backgroundColor = UIColor.orangeColor()
+        scrollLine.backgroundColor = UIColor.orange
         return scrollLine
     }()
     init(frame: CGRect,titles:[String]) {
@@ -50,7 +50,7 @@ class PageTitleView: UIView {
     }
 }
 extension PageTitleView {
-    private func setupUI() {
+    fileprivate func setupUI() {
         //1UIScrollView
         addSubview(scrollView)
         scrollView.frame = bounds
@@ -59,16 +59,16 @@ extension PageTitleView {
         //dixian
         setupBottonLineAndScrollLine()
     }
-    private func setupTitleLables() {
+    fileprivate func setupTitleLables() {
         let lableH:CGFloat = frame.height - kscrollLineH
         let lableY:CGFloat = 0
-        for(index,title) in titles.enumerate() {
+        for(index,title) in titles.enumerated() {
             let lable = UILabel()
             lable.text = title
             lable.tag = index
-            lable.font = UIFont.systemFontOfSize(16.0)
-            lable.textColor = UIColor.darkGrayColor()
-            lable.textAlignment = .Center
+            lable.font = UIFont.systemFont(ofSize: 16.0)
+            lable.textColor = UIColor.darkGray
+            lable.textAlignment = .center
             //frame
             let lableW:CGFloat = frame.width / CGFloat(titles.count)
             let lableX:CGFloat = CGFloat(index) * lableW
@@ -76,13 +76,13 @@ extension PageTitleView {
             addSubview(lable)
             titleLables.append(lable)
             //label点击事件
-            lable.userInteractionEnabled = true
-            let tipGst = UITapGestureRecognizer(target: self, action: "lableTapGesClick:")
+            lable.isUserInteractionEnabled = true
+            let tipGst = UITapGestureRecognizer(target: self, action: #selector(PageTitleView.lableTapGesClick(_:)))
             lable.addGestureRecognizer(tipGst)
         }
     }
     
-    @objc private func lableTapGesClick(tapGes:UITapGestureRecognizer) {
+    @objc fileprivate func lableTapGesClick(_ tapGes:UITapGestureRecognizer) {
         
         //1获取当前label的
         guard let currentLabel =  tapGes.view as? UILabel else {return}
@@ -91,34 +91,34 @@ extension PageTitleView {
         
         let oldLabel = titleLables[index]
         //3
-        currentLabel.textColor = UIColor.orangeColor()
-        oldLabel.textColor = UIColor.darkGrayColor()
+        currentLabel.textColor = UIColor.orange
+        oldLabel.textColor = UIColor.darkGray
         //4
         index = currentLabel.tag
         //5
         let scrollLineX = CGFloat(index) * scrollLine.bounds.width
-        UIView.animateWithDuration(0.2) { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             self.scrollLine.frame.origin.x = scrollLineX
-        }
+        }) 
         //6
         delegate?.PageTitle(self, selectedIndex: index)
     }
-    private func setupBottonLineAndScrollLine() {
+    fileprivate func setupBottonLineAndScrollLine() {
         let buttonLine = UIView()
-        buttonLine.backgroundColor = UIColor.lightGrayColor()
+        buttonLine.backgroundColor = UIColor.lightGray
         let lineH :CGFloat = 0.5
         buttonLine.frame = CGRect(x: 0, y: frame.height - lineH, width: frame.width, height: lineH)
         addSubview(buttonLine)
         //2.
         scrollView.addSubview(scrollLine)
         guard let fristLabel = titleLables.first else{return}
-        fristLabel.textColor = UIColor.orangeColor()
+        fristLabel.textColor = UIColor.orange
         scrollLine.frame = CGRect(x: 0, y: frame.height - kscrollLineH, width: fristLabel.frame.width, height: kscrollLineH)
     }
 }
 //MARK: - 公开函数
 extension PageTitleView {
-    func setupContentOffset(progress:CGFloat,sourceIndex:Int,targetIndex:Int) {
+    func setupContentOffset(_ progress:CGFloat,sourceIndex:Int,targetIndex:Int) {
         //1
         let sourceLabel = titleLables[sourceIndex]
         let targetLabel = titleLables[targetIndex]

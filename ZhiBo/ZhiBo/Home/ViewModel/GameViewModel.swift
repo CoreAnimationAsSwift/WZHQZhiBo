@@ -12,7 +12,7 @@ class GameViewModel {
     lazy var games :[GameModel] = [GameModel]()
 }
 extension GameViewModel {
-    func loadData (completion:() -> ())  {
+    func loadData (_ completion:@escaping () -> ())  {
         NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getColumnDetail", parameters: ["shortName":"game"]) { (result) -> () in
             guard let dataDict = result as? [String : AnyObject] else {return}
             guard let dataArr = dataDict["data"] as? [[String :AnyObject]] else {return}

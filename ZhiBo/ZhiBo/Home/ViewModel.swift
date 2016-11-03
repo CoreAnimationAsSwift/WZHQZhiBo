@@ -11,15 +11,15 @@ import UIKit
 class ViewModel {
     lazy var cycleModels :[CycleModel] = [CycleModel]()
     lazy var anchorGroup :[AnchorGroup] = [AnchorGroup]()
-    private lazy var oneGroup :AnchorGroup = AnchorGroup()
-    private lazy var twoGroup : AnchorGroup = AnchorGroup()
+    fileprivate lazy var oneGroup :AnchorGroup = AnchorGroup()
+    fileprivate lazy var twoGroup : AnchorGroup = AnchorGroup()
     
-    func loadData(completion:() -> ()) {
-        let parameters = ["limit":"4","offset":"0","time":NSDate.getCurrentTime()]
-        let gcdGourp = dispatch_group_create()
+    func loadData(_ completion:@escaping () -> ()) {
+        let parameters = ["limit":"4","offset":"0","time":Date.getCurrentTime()]
+        let gcdGourp = DispatchGroup()
         //1
-        dispatch_group_enter(gcdGourp)
-        NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time":NSDate.getCurrentTime()]) { (result) -> () in
+        gcdGourp.enter()
+        NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time":Date.getCurrentTime()]) { (result) -> () in
             guard let resultDict = result as? [String:AnyObject] else {return}
             guard let dataArr = resultDict["data"] as? [[String : AnyObject]] else {return}
             self.oneGroup.tag_name = "热门"
@@ -29,10 +29,10 @@ class ViewModel {
                 self.oneGroup.anchors.append(anchor)
                 
             }
-            dispatch_group_leave(gcdGourp)
+            gcdGourp.leave()
         }
         //2
-        dispatch_group_enter(gcdGourp)
+        gcdGourp.enter()
         NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parameters) { (result) -> () in
             guard let resultDic = result as? [String : AnyObject] else {return}
             guard let dataArr = resultDic["data"] as? [[String : AnyObject]] else {return}
@@ -42,10 +42,10 @@ class ViewModel {
                 let anchor = AnchorModel(dict: dict)
                 self.twoGroup.anchors.append(anchor)
             }
-            dispatch_group_leave(gcdGourp)
+            gcdGourp.leave()
         }
         //3
-        dispatch_group_enter(gcdGourp)
+        gcdGourp.enter()
         NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) -> () in
             guard let resultDict = result as? [String:AnyObject] else {return}
             guard let dataArr = resultDict["data"] as? [[String : AnyObject]] else {return}
@@ -53,15 +53,15 @@ class ViewModel {
                 let group = AnchorGroup(dict:dict)
                 self.anchorGroup.append(group)
             }
-            dispatch_group_leave(gcdGourp)
+            gcdGourp.leave()
         }
-        dispatch_group_notify(gcdGourp, dispatch_get_main_queue()) { () -> Void in
-            self.anchorGroup.insert(self.twoGroup, atIndex: 0)
-            self.anchorGroup.insert(self.oneGroup, atIndex: 0)
+        gcdGourp.notify(queue: DispatchQueue.main) { () -> Void in
+            self.anchorGroup.insert(self.twoGroup, at: 0)
+            self.anchorGroup.insert(self.oneGroup, at: 0)
             completion()
         }
     }
-    func loadCycleData(completion:() -> ()) {
+    func loadCycleData(_ completion:@escaping () -> ()) {
         NetworkTools.requestData(.GET, urlString: "http://capi.douyutv.com/api/v1/slide/6", parameters: ["version":"2.300"]) { (result) -> () in
 //            print(result)
             guard let resultDict = result as? [String : AnyObject] else {return}

@@ -18,8 +18,8 @@ class CollectionBaseCell: UICollectionViewCell {
     var anchor:AnchorModel? {
         didSet {
             guard let anchor = anchor else {return}
-            guard let url = NSURL(string: anchor.vertical_src) else {return}
-            iconImageView.kf_setImageWithURL(url)
+            guard let url = URL(string: anchor.vertical_src) else {return}
+            iconImageView.kf.setImage(with: url)
             nickNameLabel.text = anchor.nickname
             var title : String = ""
             if anchor.online > 10000 {
@@ -27,7 +27,7 @@ class CollectionBaseCell: UICollectionViewCell {
             }else {
                 title = "\(anchor.online)人在线"
             }
-            onLineBtn.setTitle(title, forState: .Normal)
+            onLineBtn.setTitle(title, for: UIControlState())
             
         }
     }

@@ -16,8 +16,8 @@ class CollectionGameCell: UICollectionViewCell {
     var group : BaseModel? {
         didSet {
             titleLabel.text = group?.tag_name
-            let url = NSURL(string: group?.icon_url ?? "")
-            imageView.kf_setImageWithURL(url!, placeholderImage: UIImage(named: "home_more_btn"))
+            let url = URL(string: group?.icon_url ?? "")
+            imageView.kf.setImage(with: url, placeholder: UIImage(named: "home_more_btn"))
         }
     }
     

@@ -12,7 +12,7 @@ private let kTitleViewH:CGFloat = 40
 
 class HomeViewController: UIViewController {
     //懒加载属性
-    private lazy var pageTitlView:PageTitleView = {[weak self] in
+    fileprivate lazy var pageTitlView:PageTitleView = {[weak self] in
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavgationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
@@ -20,13 +20,14 @@ class HomeViewController: UIViewController {
         titleView.delegate = self
         return titleView
     }()
-    private lazy var pageContentView:PageContentView = {[weak self] in
+    fileprivate lazy var pageContentView:PageContentView = {[weak self] in
         let contentH :CGFloat = kScreenH - kStatusBarH - kNavgationBarH - kTitleViewH - kTabbarH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavgationBarH + kTitleViewH, width: kScreenW, height: contentH)
         var childVCs = [UIViewController]()
         childVCs.append(RecommendViewController())
         childVCs.append(GameViewController())
-        for _ in 0..<2 {
+        childVCs.append(AmuseViewController())
+        for _ in 0..<1 {
             let childVC = UIViewController()
             childVC.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVCs.append(childVC)
@@ -50,7 +51,7 @@ class HomeViewController: UIViewController {
 
 }
 extension HomeViewController {
-    private func setupUI() {
+    fileprivate func setupUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
         let size = CGSize(width: 40, height: 40)
         let qrcodeItem = UIBarButtonItem(imageName: "Image_scan",highlightName: "Image_scan_click",size: size)
@@ -63,13 +64,13 @@ extension HomeViewController {
 }
 //MARK: - 代理PageTitleViewDelegate
 extension HomeViewController:PageTitleViewDelegate {
-    func PageTitle(titelView: PageTitleView, selectedIndex index: Int) {
+    func PageTitle(_ titelView: PageTitleView, selectedIndex index: Int) {
         pageContentView.setupSelectedIndex(index)
     }
 }
 //MARK: - 代理PageContentViewDelegate
 extension HomeViewController:PageContentViewDelegate {
-    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
         pageTitlView.setupContentOffset(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
     

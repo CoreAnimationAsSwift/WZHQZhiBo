@@ -18,7 +18,7 @@ class MainViewController: UITabBarController {
         addChildVC("Profile")
         
     }
-    private func addChildVC(sbBord:String) {
+    fileprivate func addChildVC(_ sbBord:String) {
         let vc = UIStoryboard(name: sbBord, bundle: nil).instantiateInitialViewController()
         addChildViewController(vc!)
         

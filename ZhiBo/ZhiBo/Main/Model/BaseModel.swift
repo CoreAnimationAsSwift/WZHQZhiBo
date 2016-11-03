@@ -14,11 +14,11 @@ class BaseModel: NSObject {
     override init() {
         
     }
-    init(dict:[String:AnyObject]) {
+    init(dict:[String:Any]) {
         super.init()
-        setValuesForKeysWithDictionary(dict)
+        setValuesForKeys(dict)
     }
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
     }
 

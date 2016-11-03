@@ -13,7 +13,7 @@ class CollectionVYanZhiCell: CollectionBaseCell {
    override var anchor:AnchorModel? {
         didSet {
             super.anchor = anchor
-            cityBtn.setTitle(anchor?.anchor_city, forState: .Normal)
+            cityBtn.setTitle(anchor?.anchor_city, for: UIControlState())
         }
     }
 
