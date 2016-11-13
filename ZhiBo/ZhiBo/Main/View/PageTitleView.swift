@@ -52,8 +52,8 @@ class PageTitleView: UIView {
 extension PageTitleView {
     fileprivate func setupUI() {
         //1UIScrollView
-        addSubview(scrollView)
-        scrollView.frame = bounds
+//        addSubview(scrollView)
+//        scrollView.frame = bounds
         //
         setupTitleLables()
         //dixian

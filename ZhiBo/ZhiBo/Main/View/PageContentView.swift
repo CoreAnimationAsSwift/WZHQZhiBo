@@ -51,9 +51,9 @@ class PageContentView: UIView {
 extension PageContentView {
     fileprivate func setupUI() {
         //1将子控制器添加到父控制器上
-//        for childVC in childVCs {
-//            prententVC.addChildViewController(childVC)
-//        }
+        for childVC in childVCs {
+            prententVC!.addChildViewController(childVC)
+        }
         //2创建集合视图
         addSubview(self.collectionView)
         

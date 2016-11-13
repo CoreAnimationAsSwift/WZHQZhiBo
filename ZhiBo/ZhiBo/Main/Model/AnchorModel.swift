@@ -16,7 +16,7 @@ class AnchorModel: NSObject {
     var nickname : String = ""
     var online : Int = 0
     var anchor_city : String = ""
-    init(dict:[String : AnyObject]) {
+    init(dict:[String : Any]) {
         super.init()
         setValuesForKeys(dict)
     }

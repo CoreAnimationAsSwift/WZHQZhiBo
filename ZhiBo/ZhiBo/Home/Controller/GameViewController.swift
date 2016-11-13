@@ -14,7 +14,7 @@ private let kHeaderH : CGFloat = 50
 private let kGameViewH : CGFloat = 90
 private let GameCellID = "GameCellID"
 private let HeaderCellID = "HeaderCellID"
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
     fileprivate lazy var gameViewModel : GameViewModel = GameViewModel()
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
         let layout = UICollectionViewFlowLayout()
@@ -46,11 +46,16 @@ class GameViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        loadData()
+    }
+    override func setupUI(){
         view.addSubview(collectionView)
         collectionView.addSubview(topHeaderView)
         collectionView.addSubview(gameView)
         collectionView.contentInset = UIEdgeInsets(top: kHeaderH + kGameViewH, left: 0, bottom: 0, right: 0)
-        loadData()
+        collectionView.isHidden = true
+        super.setupUI()
       
     }
 
@@ -62,7 +67,8 @@ extension GameViewController {
             self.collectionView.reloadData()
             let groups = self.gameViewModel.games[0..<10]
             self.gameView.groups = Array(groups)
-            
+            self.stopAnimation()
+            self.collectionView.isHidden = false
         }
     }
 }

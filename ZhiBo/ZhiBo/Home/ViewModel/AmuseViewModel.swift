@@ -8,20 +8,13 @@
 
 import UIKit
 
-class AmuseViewModel {
-    lazy var group :[AnchorGroup] = [AnchorGroup]()
+class AmuseViewModel :BaseViewModel {
+
 }
 
 extension AmuseViewModel {
     func loadData(completion: @escaping ()->()) {
-        NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2") {(resoponse) -> () in
-            guard let data = resoponse as? [String:Any] else {return}
-            guard let dataArr = data["data"] as? [[String :Any]] else {return}
-//            print(dataArr)
-            for dict in dataArr {
-                self.group.append(AnchorGroup(dict: dict))
-            }
-            //回调
+        loadDataBase(mothed: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2") { (result) -> () in
             completion()
         }
     }

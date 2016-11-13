@@ -23,7 +23,7 @@ class RecommendCyleView: UIView {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
-        autoresizingMask = UIViewAutoresizing()
+//        autoresizingMask = UIViewAutoresizing()
         collectionView.register(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCyleCellID)
        
     }

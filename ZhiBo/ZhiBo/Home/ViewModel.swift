@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ViewModel {
+class ViewModel:BaseViewModel {
     lazy var cycleModels :[CycleModel] = [CycleModel]()
-    lazy var anchorGroup :[AnchorGroup] = [AnchorGroup]()
     fileprivate lazy var oneGroup :AnchorGroup = AnchorGroup()
     fileprivate lazy var twoGroup : AnchorGroup = AnchorGroup()
     
@@ -46,18 +45,21 @@ class ViewModel {
         }
         //3
         gcdGourp.enter()
-        NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) -> () in
-            guard let resultDict = result as? [String:AnyObject] else {return}
-            guard let dataArr = resultDict["data"] as? [[String : AnyObject]] else {return}
-            for dict in dataArr {
-                let group = AnchorGroup(dict:dict)
-                self.anchorGroup.append(group)
-            }
+//        NetworkTools.requestData(.GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { (result) -> () in
+//            guard let resultDict = result as? [String:AnyObject] else {return}
+//            guard let dataArr = resultDict["data"] as? [[String : AnyObject]] else {return}
+//            for dict in dataArr {
+//                let group = AnchorGroup(dict:dict)
+//                self.anchorGroup.append(group)
+//            }
+//            gcdGourp.leave()
+//        }
+        loadDataBase(mothed: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
             gcdGourp.leave()
         }
         gcdGourp.notify(queue: DispatchQueue.main) { () -> Void in
-            self.anchorGroup.insert(self.twoGroup, at: 0)
-            self.anchorGroup.insert(self.oneGroup, at: 0)
+            self.anchorGroups.insert(self.twoGroup, at: 0)
+            self.anchorGroups.insert(self.oneGroup, at: 0)
             completion()
         }
     }
